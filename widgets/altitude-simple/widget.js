@@ -1,4 +1,4 @@
-import { safeGetLocation, humanAlt, fitTextWidth } from '../../js/xc-core.js';
+import { safeGetLocation, humanAlt, fitTextWidth } from '/js/xc-core.js';
 
 const el    = document.getElementById('alt');
 const fit   = fitTextWidth(el, /*padding*/ 16); // leave 8px either side
