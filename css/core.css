@@ -46,18 +46,11 @@ body {
 .text-item {
     color: var(--color-text);
     font-weight: 700;
+    line-height: 0.7;
 }
 
 .text-label {
     color: var(--color-label);
     font-size: 1.5rem;
     font-weight: 500;
-}
-
-/* scale to the smaller of width or height (minus padding) */
-#alt {
-    line-height: 1;
-    /* subtract padding (2*var) from viewport then take 0.9 of that */
-    font-size: min(calc((100vw - 2 * var(--padding)) * 0.9),
-            calc((100vh - 2 * var(--padding)) * 0.9));
 }
