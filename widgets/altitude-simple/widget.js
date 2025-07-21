@@ -6,11 +6,12 @@ const units = new URLSearchParams(location.search).get('units') === 'ft'
               ? 'ft' : 'm';
 
 function render() {
-  const loc = safeGetLocation();
-  el.textContent = loc?.altGps != null
+    const loc = safeGetLocation();
+    el.textContent = loc?.altGps != null
                   ? humanAlt(loc.altGps, units)
                   : '---';
-  fit();   // recalc to fit the new string width
+    console.log('container width:', el.parentElement.getBoundingClientRect().width);
+    fit();   // recalc to fit the new string width
 }
 
 // initial paint + update every second
