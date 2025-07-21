@@ -1,0 +1,63 @@
+/* 1) Reset + box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2) CSS Variables for theme */
+:root {
+    --font-sans: Arial, sans-serif;
+    --font-mono: 'Roboto mono', monospace;
+    --color-bg: #000;
+    --color-text: hsl(0, 0%, 100%);
+    --color-label: hsl(0, 0%, 50%);
+    --color-accent: #EF4444;
+    --space: 0.5rem;
+    --padding: 1rem;
+}
+
+/* 3) Base styles */
+body {
+    padding: var(--padding);
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.4;
+}
+
+/* 4) Utility classes */
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.text-item {
+    color: var(--color-text);
+    font-weight: 700;
+}
+
+.text-label {
+    color: var(--color-label);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* scale to the smaller of width or height (minus padding) */
+#alt {
+    line-height: 1;
+    /* subtract padding (2*var) from viewport then take 0.9 of that */
+    font-size: min(calc((100vw - 2 * var(--padding)) * 0.9),
+            calc((100vh - 2 * var(--padding)) * 0.9));
+}
